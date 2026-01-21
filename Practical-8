@@ -1,0 +1,16 @@
+import java.util.Scanner;
+class Practical-8
+{
+        public static void main(String args[])
+        {
+                int a=Integer.parseInt(args[0]);
+                double b=Double.parseDouble(args[1]);
+                       System.out.println("Integer Number:"+a);
+                System.out.println("Double Number:"+b);
+                double sum=0,mul=0;
+                sum=a+b;
+                System.out.println("Sum="+sum);
+                mul=a*b;
+                System.out.println("Product="+mul);                                
+        }
+}
