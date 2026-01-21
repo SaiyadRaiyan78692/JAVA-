@@ -1,0 +1,41 @@
+import java.util.Scanner;
+class Practical2
+{
+        public static void main(String args[])
+        {
+                Scanner s = new Scanner(System.in);
+                double a;
+                double b;
+                double c;
+                double d;
+                double e;
+                double f;
+                double D,Dx,Dy,x,y;
+                System.out.println("enter value of a:");
+                a=s.nextDouble();
+
+                System.out.println("enter value of b:");
+                b=s.nextDouble();
+
+                System.out.println("enter value of c:");
+                c=s.nextDouble();
+
+                System.out.println("enter value of d:");
+                d=s.nextDouble();
+
+                System.out.println("enter value of e:");
+                e=s.nextDouble();
+
+                System.out.println("enter value of f:");
+                f=s.nextDouble();
+
+                D=a*b-b*c;
+                Dx=e*d-b*f;
+                Dy=a*f-c*e;
+                x=Dx/D;
+                y=Dy/D;
+
+                        System.out.println("X="+x);
+                        System.out.println("Y="+y);
+        }
+}
