@@ -1,0 +1,2 @@
+# JAVA-
+MANUAL CODES
