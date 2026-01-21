@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.lang.Math;
+plubic class P_7 Triangle using Heron's Formula
+{
+    public static void main(String args[])
+        {
+
+                Scanner sc=new Scanner(System.in);
+                double a,b,c,area=0,s=0;
+                System.out.print("Enter value of a:");
+                a=sc.nextDouble();
+                System.out.print("Enter value of b:");
+                b=sc.nextDouble();
+                System.out.print("Enter value of c:");
+                c=sc.nextDouble();
+
+                if(a+b>c && b+c>a && a+c>b){
+                s=(a+b+c)/2;
+                area=Math.sqrt(s*(s-a)*(s-b)*(s-c));
+                System.out.printf("Area=%.2f",area);
+                }
+                else
+                System.out.print("Invalid Values...");
+
+}
+}
