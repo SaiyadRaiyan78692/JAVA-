@@ -1,0 +1,11 @@
+import java.util.Scanner;
+class Practical1{
+        public static void main(String args[]){
+                System.out.println("Enter distance in metre:"); 
+                Scanner sc=new Scanner(System.in);
+                int a;
+                a=sc.nextInt();
+                double distanceF=a*3.28084;
+                System.out.println("Distance in feet:"+distanceF); 
+        }
+}
