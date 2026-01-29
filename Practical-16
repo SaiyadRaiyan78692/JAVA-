@@ -1,0 +1,41 @@
+class LoanCalculator {
+
+    
+    double calculateEMI(int principal, int time, float rate) {
+        double r = rate / (12 * 100); // monthly rate
+        int t = time * 12;           // months
+        return (principal * r * Math.pow(1 + r, t)) /
+               (Math.pow(1 + r, t) - 1);
+    }
+
+
+    double calculateEMI(double principal, int time, double rate) {
+        double r = rate / (12 * 100);
+        int t = time * 12;
+        return (principal * r * Math.pow(1 + r, t)) /
+               (Math.pow(1 + r, t) - 1);
+    }
+
+    
+    double calculateEMI(int principal, int time) {
+        double rate = 10.0;
+        double r = rate / (12 * 100);
+        int t = time * 12;
+        return (principal * r * Math.pow(1 + r, t)) /
+               (Math.pow(1 + r, t) - 1);
+    }
+}
+public class Practical16 {
+    public static void main(String[] args) {
+
+        LoanCalculator lc = new LoanCalculator();
+
+        double homeLoanEMI = lc.calculateEMI(500000, 20, 7.5f);
+        double vehicleLoanEMI = lc.calculateEMI(300000.0, 5, 9.0);
+        double personalLoanEMI = lc.calculateEMI(100000, 2);
+
+        System.out.println("Home Loan EMI: " + homeLoanEMI);
+        System.out.println("Vehicle Loan EMI: " + vehicleLoanEMI);
+        System.out.println("Personal Loan EMI: " + personalLoanEMI);
+    }
+}
