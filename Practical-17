@@ -1,0 +1,30 @@
+class University {
+    static int totalStudents;
+    static String universityName;
+
+    static {
+        universityName = "SPB Patel Engineering College";
+        System.out.println("Static block executed");
+    }
+
+    {
+        System.out.println("Instance block executed");
+    }
+
+    University() {
+        totalStudents++;
+        System.out.println("Constructor executed");
+    }
+
+    static int getTotalStudents() {
+        return totalStudents;
+    }
+
+    public static void main(String[] args) {
+        University u1 = new University();
+        University u2 = new University();
+
+        System.out.println("University Name: " + universityName);
+        System.out.println("Total Students: " + getTotalStudents());
+    }
+}
