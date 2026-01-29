@@ -1,0 +1,59 @@
+class BankAccount {
+    String accountNumber;
+    String accountHolderName;
+    double balance;
+
+    void openAccount(String accNo, String name, double bal) {
+        accountNumber = accNo;
+        accountHolderName = name;
+        balance = bal;
+    }
+
+    void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount);
+    }
+
+    void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient Balance");
+        }
+    }
+
+    void checkBalance() {
+        System.out.println("Balance: " + balance);
+    }
+}
+
+class SavingAccount extends BankAccount {
+    void calculateInterest() {
+        double interest = balance * 0.04; // 4% interest
+        System.out.println("Savings Account Interest: " + interest);
+    }
+}
+
+class FixedDepositAccount extends BankAccount {
+    void maturityAmount() {
+        double maturity = balance * 1.10; // 10% growth
+        System.out.println("Fixed Deposit Maturity Amount: " + maturity);
+    }
+
+    public static void main(String[] args) {
+        SavingAccount sa = new SavingAccount();
+        sa.openAccount("SA101", "Priti", 10000);
+        sa.deposit(2000);
+        sa.withdraw(1500);
+        sa.checkBalance();
+        sa.calculateInterest();
+
+        System.out.println();
+
+        FixedDepositAccount fd = new FixedDepositAccount();
+        fd.openAccount("FD201", "Yash", 15000);
+        fd.checkBalance();
+        fd.maturityAmount();
+    }
+}
