@@ -1,0 +1,22 @@
+class VolumeCalc {
+
+    double calculateVolume(double side) {
+        return side * side * side;
+    }
+
+    double calculateVolume(double l, double w, double h) {
+        return l * w * h;
+    }
+
+    double calculateVolumeSphere(double r) {
+        return (4.0 / 3) * Math.PI * r * r * r;
+    }
+
+    public static void main(String[] args) {
+        VolumeCalc v = new VolumeCalc();
+
+        System.out.println("Cube Volume: " + v.calculateVolume(4));
+        System.out.println("Rectangular Cube Volume: " + v.calculateVolume(3, 4, 5));
+        System.out.println("Sphere Volume: " + v.calculateVolumeSphere(3));
+    }
+}
