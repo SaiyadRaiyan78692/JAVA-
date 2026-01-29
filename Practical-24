@@ -1,0 +1,39 @@
+class Employee {
+    String name;
+    String department;
+
+    Employee() {
+        name = "Amit";
+        department = "HR";
+    }
+
+    void displayDetails() {
+        System.out.println("Employee Name: " + name);
+        System.out.println("Department: " + department);
+    }
+}
+
+class Manager extends Employee {
+    String projectName;
+
+    Manager() {
+        super();
+        projectName = "ERP System";
+    }
+
+    @Override
+    void displayDetails() {
+        super.displayDetails();
+        System.out.println("Project Name: " + projectName);
+    }
+
+    public static void main(String[] args) {
+        Employee e = new Employee();
+        e.displayDetails();
+
+        System.out.println();
+
+        Manager m = new Manager();
+        m.displayDetails();
+    }
+}
