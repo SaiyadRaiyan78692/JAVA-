@@ -1,0 +1,79 @@
+class Vehicle {
+    protected String vehicleNumber;
+    protected String brand;
+    protected String fuelType;
+
+    Vehicle(String vehicleNumber, String brand, String fuelType) {
+        this.vehicleNumber = vehicleNumber;
+        this.brand = brand;
+        this.fuelType = fuelType;
+    }
+
+    void displayDetails() {
+        System.out.println("Vehicle Number: " + vehicleNumber);
+        System.out.println("Brand: " + brand);
+        System.out.println("Fuel Type: " + fuelType);
+    }
+}
+
+class Car extends Vehicle {
+    int numberOfSeats;
+    boolean ACavailable;
+
+    Car(String vehicleNumber, String brand, String fuelType, int numberOfSeats, boolean ACavailable) {
+        super(vehicleNumber, brand, fuelType);
+        this.numberOfSeats = numberOfSeats;
+        this.ACavailable = ACavailable;
+    }
+
+    void displayDetails() {
+        super.displayDetails();
+        System.out.println("Seats: " + numberOfSeats);
+        System.out.println("AC Available: " + ACavailable);
+    }
+}
+
+class ElectricCar extends Car {
+    int batteryCapacity;
+    int chargingTime;
+
+    ElectricCar(String vehicleNumber, String brand, String fuelType, int numberOfSeats,
+                boolean ACavailable, int batteryCapacity, int chargingTime) {
+
+        super(vehicleNumber, brand, fuelType, numberOfSeats, ACavailable);
+        this.batteryCapacity = batteryCapacity;
+        this.chargingTime = chargingTime;
+    }
+
+    void displayDetails() {
+        super.displayDetails();
+        System.out.println("Battery Capacity: " + batteryCapacity + " kWh");
+        System.out.println("Charging Time: " + chargingTime + " hours");
+    }
+}
+
+public class MainVehicle {
+    public static void main(String[] args) {
+
+        Vehicle v = new Vehicle("GJ01AB1234", "Tata", "Petrol");
+        Car c = new Car("GJ02CD5678", "Hyundai", "Petrol", 5, true);
+        ElectricCar e = new ElectricCar("GJ03EF9012", "Tesla", "Electric", 5, true, 75, 2);
+
+        System.out.println("Vehicle Details:");
+        v.displayDetails();
+
+        System.out.println("\nCar Details:");
+        c.displayDetails();
+
+        System.out.println("\nElectric Car Details:");
+        e.displayDetails();
+
+        Vehicle obj = new Car("GJ04GH3456", "Honda", "Petrol", 5, true);
+
+        if(obj instanceof Car){
+            Car carObj = (Car)obj;
+            System.out.println("\nUpcasting and Downcasting Example:");
+            carObj.displayDetails();
+        }
+    }
+}
